@@ -1,0 +1,16 @@
+{
+  "fields": [
+    {
+      "name": "code",
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "amount",
+      "type": "decimal",
+      "required": true
+    }
+  ],
+  "extraColumns": "保留",
+  "header": "可选"
+}
