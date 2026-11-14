@@ -27,8 +27,10 @@ docker run --rm --network none dialect-intake:local npm run demo
 
 - `src/source.mjs`：本地来源生命周期与HTTP入口。
 - `src/client.mjs`：目录读取及原始字节获取。
+- `src/intake/`：可负责的方言接收流程（候选证据、人工确认、冲突暂停、内容寻址与版本），见 `docs/intake-flow.md`。
 - `fixtures/source.json`：来源初始状态。
 - `docs/source-contract.md`：来源协议范围、控制与领域语义。
 - `test/source.test.mjs`：实际来源集成测试。
+- `test/intake.test.mjs`、`test/intake-cli.test.mjs`：接收流程与命令行全链路测试。
 
 运行时状态仅用于来源模拟，重启来源会回到 fixtures 中的值。接入业务自己的持久状态请使用 `.local/` 或明确的外部路径。来源管理入口 `/state` 和 `/control` 是本地操作设施，不能作为绕过浏览器页面的业务写入捷径。
